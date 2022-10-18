@@ -1,0 +1,58 @@
+#contenitore-generale{
+    height: 100vh;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+}
+
+main{
+     background-color: rgb(159, 251, 214);
+     height: calc(100% - 130px);
+}
+
+footer{
+    width: 100%;
+    height: 50px;
+}
+
+.my-container{
+    width: 80%;
+    margin: 0 auto
+}
+
+/* MODIFICO MAIN */
+
+#contenitore-main{
+    display: flex;
+    align-items: center;
+}
+
+.field-game{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.boxes{
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* EFFETTI BG COLOR */
+
+.bg-blu{
+    background-color: lightskyblue;
+}
+
+.bg-rosso{
+    background-color: red;
+}
