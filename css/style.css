@@ -1,5 +1,17 @@
+/* UTILITY */
+:root{
+    --avorio: #FAF7F0;
+    --celeste: #CDFCF6;
+    --azzurro: #BCCEF8;
+    --azzurroscuro: #98A8F8;
+}
+
 #contenitore-generale{
     height: 100vh;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
 }
 
 header{
@@ -8,7 +20,7 @@ header{
 }
 
 main{
-     background-color: rgb(159, 251, 214);
+     background-color: var(--celeste);
      height: calc(100% - 130px);
 }
 
@@ -22,6 +34,22 @@ footer{
     margin: 0 auto
 }
 
+h1{
+    padding-left: 10px;
+}
+
+#play-button{
+    background-color: var(--azzurroscuro);
+    color: white;
+    padding: 10px;
+}
+
+#livelli-difficolta{
+    background-color: var(--azzurroscuro);
+    color: white;
+    padding: 10px;
+}
+
 /* MODIFICO MAIN */
 
 #contenitore-main{
@@ -33,13 +61,13 @@ footer{
     width: 500px;
     height: 500px;
     margin: 0 auto;
-    border: 1px solid black;
+    border: 1px solid var(--azzurroscuro);
     display: flex;
     flex-wrap: wrap;
 }
 
 .boxes{
-    border: 1px solid black;
+    border: 1px solid  var(--azzurroscuro);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -47,10 +75,15 @@ footer{
     cursor: pointer;
 }
 
+.div-creato{
+    display: flex;
+    justify-content: center;
+}
+
 /* EFFETTI BG COLOR */
 
 .bg-blu{
-    background-color: lightskyblue;
+    background-color: var(--azzurroscuro);
 }
 
 .bg-rosso{

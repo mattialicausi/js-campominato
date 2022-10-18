@@ -22,8 +22,10 @@ const playButton = document.getElementById('play-button');
 function play(){
 
     let numBox;
+    const myContainer = document.querySelector('.my-container');
     const contenitoreMain = document.getElementById('contenitore-main');
     contenitoreMain.innerHTML = '';
+   
     const livelliDifficoltaHTML = document.getElementById('livelli-difficolta');
     const livelli = livelliDifficoltaHTML.value;
     const numBombe = 16;
@@ -46,7 +48,14 @@ function play(){
             numBox = 49;
             break;
     } 
-
+    function esito(testo){
+        const Div = document.createElement('div');
+        Div.className = 'div-creato'; 
+        myContainer.prepend(Div);
+        Div.innerHTML = (testo) + ' Hai ottenuto  ' + score + ' punti';
+        return Div;
+        }
+        
 
     //CREO 16 NUMERI DA INSERIRE IN UN ARRAY PER CREARE BOMBE
 
@@ -134,7 +143,6 @@ function play(){
 
         for (let i = 0; i < squares.length; i++){
             squares[i].removeEventListener('click', scegli);
-            console.log(squares[i])
             // SE I+1 E' NELL'ARRAY L0 SCOPERCHIAMO
             // IF SQUARE [I] == LISTAB
             let num = i+1;
@@ -145,16 +153,20 @@ function play(){
            
         }
            
+
+
         if(score === MAXATTEMPT){
             console.log('Ha vinto!!');
-            contenitoreMain.append('Hai vinto!');
+            esito('Hai vinto!!');
 
         } else{
             console.log('Hai perso!!');
-            
+            esito('Hai perso!!')
         }
+
     }
 
+    
 }
 
 playButton.addEventListener('click', play);
