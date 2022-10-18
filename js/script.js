@@ -58,7 +58,6 @@ function play(){
             }
             
         }
-        // console.log(listaB);
 
         // VARIABILE PER DETERMINARE IL NUMERO MASSIMO DI CLICK PRIMA DI PERDERE
         const MAXATTEMPT = numBox - numBombe;
@@ -113,7 +112,7 @@ function play(){
         //BLOCCO IF PER AGGIUNGERE CLASSE BG COLOR BLU O ROSSO
     if(!listaB.includes(num)){
         this.classList.add('bg-blu');
-        console.log(listaB)
+        //console.log(listaB)
 
         score++;
         if(score === MAXATTEMPT){
@@ -123,31 +122,38 @@ function play(){
         //SE NON RAGGIUNGE IL MAXATTEMPT IL GIOCO TERMINA PERCHE BECCA IL ROSSO
     }else{
         this.classList.add('bg-rosso');
-        gameOver();
+       // gameOver();
     } 
     }
 
     // CREO FUNZIONE PER FAR TERMINARE IL GIOCO
     function gameOver(){
         const squares = document.getElementsByClassName('box');
-        console.log(box);
+        console.log(squares);
 
         for (let i = 0; i < squares.length; i++){
             squares[i].removeEventListener('click', scegli);
+            console.log(squares[i])
             // SE I+1 E' NELL'ARRAY L0 SCOPERCHIAMO
             // IF SQUARE [I] == LISTAB
             let num = i+1;
             if(listaB.includes(num)){
                 squares[i].classList.add('bg-rosso');
+                console.log(num);
             }
+           
         }
-
+            
         if(score === MAXATTEMPT){
-            console.log('Ha vinto!!')
+            console.log('Ha vinto!!');
+            contenitoreMain.append('Hai vinto!');
+
         } else{
-            console.log('Hai perso!!')
+            console.log('Hai perso!!');
+            
         }
     }
+
 }
 
 playButton.addEventListener('click', play);
