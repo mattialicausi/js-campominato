@@ -122,14 +122,15 @@ function play(){
         //SE NON RAGGIUNGE IL MAXATTEMPT IL GIOCO TERMINA PERCHE BECCA IL ROSSO
     }else{
         this.classList.add('bg-rosso');
-       // gameOver();
+        gameOver();
+     
     } 
     }
 
     // CREO FUNZIONE PER FAR TERMINARE IL GIOCO
     function gameOver(){
-        const squares = document.getElementsByClassName('box');
-        console.log(squares);
+        let squares = document.getElementsByClassName('boxes');
+        console.log(squares); 
 
         for (let i = 0; i < squares.length; i++){
             squares[i].removeEventListener('click', scegli);
@@ -143,7 +144,7 @@ function play(){
             }
            
         }
-            
+           
         if(score === MAXATTEMPT){
             console.log('Ha vinto!!');
             contenitoreMain.append('Hai vinto!');
